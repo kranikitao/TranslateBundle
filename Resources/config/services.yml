@@ -1,3 +1,6 @@
 parameters:
+    k_none_translate.guzzle_client.class: GuzzleHttp\Client
 
 services:
+    k_none_translate.guzzle_client:
+        class: %k_none_translate.guzzle_client.class%
