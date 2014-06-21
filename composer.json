@@ -1,0 +1,25 @@
+{
+    "name": "knone/translate-bundle",
+    "type": "symfony-bundle",
+    "description": "Translate bundle",
+    "keywords": ["translate", "google", "yandex"],
+    "homepage": "http://i.knone.ru",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nikita Krasnoyartsev",
+            "email": "i@knone.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.4"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.3.*@dev"
+    },
+    "autoload": {
+        "psr-0": { "KNone\\TranslateBundle\\": "" }
+    },
+    "target-dir": "knone/translate-bundle",
+    "minimum-stability": "dev"
+}
