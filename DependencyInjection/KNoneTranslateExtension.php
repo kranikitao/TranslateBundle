@@ -10,6 +10,7 @@ use Symfony\Component\DependencyInjection\Loader;
 /**
  * Class KNoneTranslateExtension
  * @package KNone\TranslateBundle\DependencyInjection
+ * @author Krasnoyartsev Nikita <i@knone.ru>
  */
 class KNoneTranslateExtension extends Extension
 {
@@ -23,5 +24,9 @@ class KNoneTranslateExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $translator = $container->findDefinition('k_none_translate.provider_factory');
+        $translator->replaceArgument(1, $config);
     }
 }
+
