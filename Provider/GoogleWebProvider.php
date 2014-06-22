@@ -5,7 +5,6 @@ namespace KNone\TranslateBundle\Provider;
 use KNone\TranslateBundle\Model\Translation;
 use KNone\TranslateBundle\Exception\TranslateException;
 use GuzzleHttp\Client;
-use GuzzleHttp\Message\ResponseInterface;
 
 /**
  * Class GoogleWebProvider
