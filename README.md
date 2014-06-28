@@ -8,23 +8,23 @@ Installation
 -----------
 Download using composer:
 
-``` shell
-    php composer.phar require knone/translate-bundle '1.0.*@dev'
+``` bash
+php composer.phar require knone/translate-bundle '1.0.*@dev'
 ```
 
 Enable the bundle in the kernel:
 
 ``` php
-    <?php
-    // app/AppKernel.php
+<?php
+// app/AppKernel.php
 
-    public function registerBundles()
-    {
-        $bundles = array(
-            // ...
-            new KNone\TranslateBundle\KNoneTranslateBundle(),
-        );
-    }
+public function registerBundles()
+{
+    $bundles = array(
+        // ...
+        new KNone\TranslateBundle\KNoneTranslateBundle(),
+    );
+}
 ```
 
 Configure the KNoneTranslateBundle
@@ -36,21 +36,21 @@ KNoneTranslateBundle have two translator-providers:
 
 You need to set default provider in config.yml:
 
-``` yaml
-    //app/config/config.yml
-    k_none_translate:
-        default_provider: google_web
+``` yml
+//app/config/config.yml
+k_none_translate:
+    default_provider: google_web
 ```
 
 If you want to use Yandex Api you need set api key ([get api key](http://api.yandex.com/key/form.xml?service=trnsl)):
 
-``` yaml
-    //app/config/config.yml
-    k_none_translate:
-        default_provider: yandex_api
-        providers:
-            yandex_api:
-                key: <api_key>
+``` yml
+//app/config/config.yml
+k_none_translate:
+    default_provider: yandex_api
+    providers:
+        yandex_api:
+            key: <api_key>
 ```
 
 Using the KNoneTranslateBundle
@@ -60,21 +60,21 @@ You just can use service k_none_translate.translator.
 Example:
 
 ``` php
-    <?php
-    ...
-    // Some action in controller
-    public function someAction()
-    {
-        /** @var KNone\TranslateBundle\Provider\ProviderInterface $tr */
-        $translator = $this->get('k_none_translate.translator');
-        $translation = $translator->translate('hello world', 'en', 'fr');
-        // you can set 'auto' as source language and translator will detect it
-        //$translation = $translator->translate('hello world', 'auto', 'fr');
+<?php
+...
+// Some action in controller
+public function someAction()
+{
+    /** @var KNone\TranslateBundle\Provider\ProviderInterface $tr */
+    $translator = $this->get('k_none_translate.translator');
+    $translation = $translator->translate('hello world', 'en', 'fr');
+    // you can set 'auto' as source language and translator will detect it
+    //$translation = $translator->translate('hello world', 'auto', 'fr');
 
-        $result = (string)$translation; // $result contains 'bonjour tout le monde'
-        $result = $translation->getResult(); // $result contains 'bonjour tout le monde'
-        $source = $translation->getSource(); // $source contains 'hello world'
-        $sourceLanguage = $translation->getSourceLanguage() // $sourceLanguage contains 'en'
-        $resultLanguage = $translation->getResultLanguage() // $resultLanguage contains 'fr'
-    }
+    $result = (string)$translation; // $result contains 'bonjour tout le monde'
+    $result = $translation->getResult(); // $result contains 'bonjour tout le monde'
+    $source = $translation->getSource(); // $source contains 'hello world'
+    $sourceLanguage = $translation->getSourceLanguage() // $sourceLanguage contains 'en'
+    $resultLanguage = $translation->getResultLanguage() // $resultLanguage contains 'fr'
+}
 ```
