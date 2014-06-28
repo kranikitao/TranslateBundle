@@ -46,7 +46,7 @@ class Configuration implements ConfigurationInterface
                     ->end()
                 ->end()
                 ->enumNode('default_provider')
-                    ->values(['google_web', 'yandex_api'])
+                    ->values(array('google_web', 'yandex_api'))
                     ->defaultValue('google_web')
                     ->cannotBeEmpty()
                     ->isRequired()
