@@ -25,8 +25,7 @@ class KNoneTranslateExtension extends Extension
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
 
-        $translator = $container->findDefinition('k_none_translate.provider_factory');
-        $translator->replaceArgument(1, $config);
+        $container->setParameter('k_none_translate.config', $config);
     }
 }
 

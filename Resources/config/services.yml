@@ -2,6 +2,7 @@ parameters:
     k_none_translate.guzzle_client.class: GuzzleHttp\Client
     k_none_translate.provider_factory.class: KNone\TranslateBundle\Provider\ProviderFactory
     k_none_translate.translator.class: KNone\TranslateBundle\Provider\ProviderInterface
+    k_none_translate.config: ~
 
 services:
     k_none_translate.guzzle_client:
