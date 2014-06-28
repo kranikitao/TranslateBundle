@@ -21,9 +21,9 @@ class Configuration implements ConfigurationInterface
         $rootNode = $treeBuilder->root('k_none_translate');
         $rootNode
             ->children()
-                ->arrayNode('providers')
+                ->arrayNode('providers')->addDefaultsIfNotSet()
                     ->children()
-                        ->arrayNode('google_web')
+                        ->arrayNode('google_web')->addDefaultsIfNotSet()
                             ->children()
                                 ->scalarNode('class')
                                     ->defaultValue('KNone\TranslateBundle\Provider\GoogleWebProvider')
@@ -31,7 +31,7 @@ class Configuration implements ConfigurationInterface
                                 ->end()
                             ->end()
                         ->end()
-                        ->arrayNode('yandex_api')
+                        ->arrayNode('yandex_api')->addDefaultsIfNotSet()
                             ->children()
                                 ->scalarNode('class')
                                     ->defaultValue('KNone\TranslateBundle\Provider\YandexApiProvider')
