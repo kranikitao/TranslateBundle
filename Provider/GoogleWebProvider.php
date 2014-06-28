@@ -53,11 +53,13 @@ class GoogleWebProvider implements ProviderInterface
      */
     protected function execute($url)
     {
-        $resource = $this->client->get($url);
-        if ($resource->getStatusCode() > 200) {
-            throw new TranslateException();
+        $response = $this->client->get($url);
+        $responseCode = $response->getStatusCode();
+
+        if ($responseCode > 200) {
+            throw new TranslateException($response->getReasonPhrase(), $responseCode);
         }
-        $rawData = preg_replace('/,+/', ',', (string)$resource->getBody());
+        $rawData = preg_replace('/,+/', ',', (string)$response->getBody());
 
         return json_decode($rawData);
     }

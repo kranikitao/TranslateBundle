@@ -2,7 +2,7 @@
 
 namespace KNone\TranslateBundle\Exception;
 
-class TranslateException extends Exception
+class Exception extends \Exception
 {
 
 }

@@ -85,11 +85,14 @@ class YandexApiProvider implements ProviderInterface
     protected function execute($url)
     {
         $response = $this->client->get($url);
-        if ($response->getStatusCode() > 200) {
-            throw new TranslateException();
+        $responseCode = $response->getStatusCode();
+
+        if ($responseCode > 200) {
+            $result = $response->json();
+            throw new TranslateException($response->getReasonPhrase(), $responseCode);
         }
 
-        return $response->json();;
+        return $response->json();
     }
 
 }
