@@ -6,7 +6,7 @@ use GuzzleHttp\Client;
 use KNone\TranslateBundle\Provider\GoogleWebProvider;
 use KNone\TranslateBundle\Provider\YandexApiProvider;
 use KNone\TranslateBundle\Provider\ProviderFactory;
-use KNone\TranslateBundle\Exception\InvalidConfigurationException;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 
 class ProviderFactoryTest extends \PHPUnit_Framework_TestCase
@@ -24,9 +24,7 @@ class ProviderFactoryTest extends \PHPUnit_Framework_TestCase
 
     public function testGetTranslator_GoogleWebProvider()
     {
-        $factory = new ProviderFactory($this->client, array(
-            'default_provider' => 'google_web'
-        ));
+        $factory = new ProviderFactory($this->client, $this->getDefaultConfig());
         $this->assertInstanceOf(
             'KNone\TranslateBundle\Provider\GoogleWebProvider',
             $factory->getTranslator()
@@ -35,10 +33,11 @@ class ProviderFactoryTest extends \PHPUnit_Framework_TestCase
 
     public function testGetTranslator_YandexApiProvider()
     {
-        $factory = new ProviderFactory($this->client, array(
-            'default_provider' => 'yandex_api',
-            'yandex_api_key' => 'key'
-        ));
+        $config = $this->getDefaultConfig();
+        $config['default_provider'] = 'yandex_api';
+        $config['providers']['yandex_api']['key'] = 'key';
+
+        $factory = new ProviderFactory($this->client, $config);
         $this->assertInstanceOf(
             'KNone\TranslateBundle\Provider\YandexApiProvider',
             $factory->getTranslator()
@@ -46,13 +45,32 @@ class ProviderFactoryTest extends \PHPUnit_Framework_TestCase
     }
 
     /**
-     * @expectedException KNone\TranslateBundle\Exception\InvalidConfigurationException
+     * @expectedException Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
      */
     public function testGetTranslator_YandexApiProvider_KeyException()
     {
-        $factory = new ProviderFactory($this->client, array(
-            'default_provider' => 'yandex_api'
-        ));
+        $config = $this->getDefaultConfig();
+        $config['default_provider'] = 'yandex_api';
+
+        $factory = new ProviderFactory($this->client, $config);
         $factory->getTranslator();
+    }
+
+    /**
+     * @return array
+     */
+    protected function getDefaultConfig()
+    {
+        return [
+            'default_provider' => 'google_web',
+            'providers' => [
+                'yandex_api' => [
+                    'class' => 'KNone\TranslateBundle\Provider\YandexApiProvider'
+                ],
+                'google_web' => [
+                    'class' => 'KNone\TranslateBundle\Provider\GoogleWebProvider',
+                ]
+            ]
+        ];
     }
 }

@@ -4,7 +4,7 @@ namespace KNone\TranslateBundle\Provider;
 
 use KNone\TranslateBundle\Provider\ProviderInterface;
 use GuzzleHttp\Client;
-use KNone\TranslateBundle\Exception\InvalidConfigurationException;
+use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 
 /**
  * Class ProviderFactory
@@ -26,15 +26,10 @@ class ProviderFactory
     /**
      * @var array
      */
-    private $providers = array(
-        'google_web' => array(
-            'class' => 'KNone\TranslateBundle\Provider\GoogleWebProvider'
-        ),
-        'yandex_api' => array(
-            'class' => 'KNone\TranslateBundle\Provider\YandexApiProvider',
-            'key_parameter' => 'yandex_api_key'
-        )
-    );
+    private $requiredKey = [
+        'yandex_api' => true,
+        'google_web' => false
+    ];
 
     /**
      * @var ProviderInterface
@@ -74,7 +69,7 @@ class ProviderFactory
      */
     protected function getClass()
     {
-        return $this->providers[$this->config['default_provider']]['class'];
+        return $this->config['providers'][$this->config['default_provider']]['class'];
     }
 
     /**
@@ -83,14 +78,15 @@ class ProviderFactory
      */
     protected function getKey()
     {
-        $providerDescription = $this->providers[$this->config['default_provider']];
-        if (isset($providerDescription['key_parameter'])) {
-            if (!isset($this->config[$providerDescription['key_parameter']])) {
+        $defaultProvider = $this->config['default_provider'];
+
+        if ($this->requiredKey[$defaultProvider]) {
+            if (!isset($this->config['providers'][$defaultProvider]['key'])) {
                 throw new InvalidConfigurationException(
-                    'The child node "' . $providerDescription['key_parameter'] . '" at path "k_none_translate" must be configured.'
+                    'The child node "key" at path "k_none_translate.providers.' . $this->config['default_provider'] . '" must be configured.'
                 );
             }
-            return $this->config[$providerDescription['key_parameter']];
+            return $this->config['providers'][$defaultProvider]['key'];
         }
 
         return false;
