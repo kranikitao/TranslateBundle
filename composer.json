@@ -23,6 +23,6 @@
     "autoload": {
         "psr-0": { "KNone\\TranslateBundle\\": "" }
     },
-    "target-dir": "knone/translate-bundle",
+    "target-dir": "KNone/TranslateBundle",
     "minimum-stability": "dev"
 }
