@@ -1,10 +1,10 @@
 <?php
 
-namespace KNone\TranslateBundle\Model;
+namespace KNone\TranslateBundle\Entity;
 
 /**
  * Class Translation
- * @package KNone\TranslateBundle\Model
+ * @package KNone\TranslateBundle\Entity
  * @author Krasnoyartsev Nikita <i@knone.ru>
  */
 class Translation

@@ -1,8 +1,8 @@
 <?php
 
-namespace KNone\TranslateBundle\Test\Model;
+namespace KNone\TranslateBundle\Test\Entity;
 
-use KNone\TranslateBundle\Model\Translation;
+use KNone\TranslateBundle\Entity\Translation;
 
 class TranslationTest extends \PHPUnit_Framework_TestCase
 {

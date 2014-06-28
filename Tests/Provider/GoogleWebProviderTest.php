@@ -5,7 +5,7 @@ namespace KNone\TranslateBundle\Test\Provider;
 use GuzzleHttp\Client;
 use KNone\TranslateBundle\Provider\GoogleWebProvider;
 use GuzzleHttp\Message\ResponseInterface;
-use KNone\TranslateBundle\Model\Translation;
+use KNone\TranslateBundle\Entity\Translation;
 
 class GoogleWebProviderTest extends \PHPUnit_Framework_TestCase
 {
