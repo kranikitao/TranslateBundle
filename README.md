@@ -9,7 +9,7 @@ Installation
 Download using composer:
 
 ``` bash
-php composer.phar require knone/translate-bundle '1.0.*'
+php composer.phar require knone/translate-bundle '1.0.*@dev'
 ```
 
 Enable the bundle in the kernel:
