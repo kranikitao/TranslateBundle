@@ -2,7 +2,7 @@ KNoneTranslateBundle
 ============
 This bundle for Symfony2 applications, which translate some text in your application using different translator-services
 
-[![Build Status](https://travis-ci.org/KNone/TranslateBundle.svg)](https://travis-ci.org/KNone/TranslateBundle)
+[![Build Status](https://travis-ci.org/KNone/TranslateBundle.svg)](https://travis-ci.org/KNone/TranslateBundle) [![Latest Stable Version](https://poser.pugx.org/knone/translate-bundle/v/stable.svg)](https://packagist.org/packages/knone/translate-bundle) [![Total Downloads](https://poser.pugx.org/knone/translate-bundle/downloads.svg)](https://packagist.org/packages/knone/translate-bundle) [![License](https://poser.pugx.org/knone/translate-bundle/license.svg)](https://packagist.org/packages/knone/translate-bundle)
 
 Installation
 -----------
