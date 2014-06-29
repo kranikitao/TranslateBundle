@@ -2,6 +2,7 @@
 
 namespace KNone\TranslateBundle\Provider;
 
+use KNone\TranslateBundle\Provider\ProviderFactoryInterface;
 use KNone\TranslateBundle\Provider\ProviderInterface;
 use GuzzleHttp\Client;
 use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
@@ -11,7 +12,7 @@ use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
  * @package KNone\TranslateBundle\Provider
  * @author Krasnoyartsev Nikita <i@knone.ru>
  */
-class ProviderFactory
+class ProviderFactory implements ProviderFactoryInterface
 {
     /**
      * @var Client
