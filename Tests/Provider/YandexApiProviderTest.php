@@ -71,11 +71,11 @@ class YandexApiProviderTest extends \PHPUnit_Framework_TestCase
 
     protected function getResponseArray()
     {
-        return array(
+        return [
             'code' => 200,
             'lang' => self::SOURCE_LANGUAGE . '-' . self::RESULT_LANGUAGE,
-            'text' => array(self::RESULT)
-        );
+            'text' => [self::RESULT]
+        ];
     }
 
 

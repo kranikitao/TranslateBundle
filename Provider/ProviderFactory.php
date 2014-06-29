@@ -26,10 +26,10 @@ class ProviderFactory
     /**
      * @var array
      */
-    private $requiredKey = array(
+    private $requiredKey = [
         'yandex_api' => true,
         'google_web' => false
-    );
+    ];
 
     /**
      * @var ProviderInterface

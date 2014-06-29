@@ -61,16 +61,16 @@ class ProviderFactoryTest extends \PHPUnit_Framework_TestCase
      */
     protected function getDefaultConfig()
     {
-        return array(
+        return [
             'default_provider' => 'google_web',
-            'providers' => array(
-                'yandex_api' => array(
+            'providers' => [
+                'yandex_api' => [
                     'class' => 'KNone\TranslateBundle\Provider\YandexApiProvider'
-                ),
-                'google_web' => array(
+                ],
+                'google_web' => [
                     'class' => 'KNone\TranslateBundle\Provider\GoogleWebProvider',
-                )
-            )
-        );
+                ]
+            ]
+        ];
     }
 }

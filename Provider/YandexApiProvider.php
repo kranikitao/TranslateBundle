@@ -66,13 +66,13 @@ class YandexApiProvider implements ProviderInterface
         if ($sourceLanguage === 'auto') {
             $lang = $resultLanguage;
         }
-        $parameters = array(
+        $parameters = [
             'key' => $this->key,
             'text' => $text,
             'lang' => $lang,
             'format' => 'plain',
             'options' => 0
-        );
+        ];
 
         return $this->url . '?' . http_build_query($parameters);
     }
