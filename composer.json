@@ -25,5 +25,6 @@
         "psr-0": { "KNone\\TranslateBundle\\": "" }
     },
     "target-dir": "KNone/TranslateBundle",
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "version": "1.0.x-dev"
 }
