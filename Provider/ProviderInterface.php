@@ -12,7 +12,7 @@ use KNone\TranslateBundle\Entity\Translation;
 interface ProviderInterface
 {
     /**
-     * @param $text
+     * @param string $text
      * @param string $sourceLanguage
      * @param string $resultLanguage
      * @return Translation
