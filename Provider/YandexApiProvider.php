@@ -88,7 +88,6 @@ class YandexApiProvider implements ProviderInterface
         $responseCode = $response->getStatusCode();
 
         if ($responseCode > 200) {
-            $result = $response->json();
             throw new TranslateException($response->getReasonPhrase(), $responseCode);
         }
 
