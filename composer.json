@@ -26,5 +26,9 @@
     },
     "target-dir": "KNone/TranslateBundle",
     "minimum-stability": "dev",
-    "version": "1.0.x-dev"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0.x-dev"
+        }
+    }
 }
