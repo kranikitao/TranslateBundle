@@ -18,7 +18,8 @@
     },
     "require-dev": {
         "phpunit/phpunit": "4.3.*@dev",
-        "phake/phake": "1.*"
+        "phake/phake": "1.*",
+        "satooshi/php-coveralls": "dev-master"
     },
     "autoload": {
         "psr-0": { "KNone\\TranslateBundle\\": "" }

@@ -14,4 +14,9 @@ before_script:
   - wget http://getcomposer.org/composer.phar
   - php composer.phar install --dev
 
-script: ./vendor/bin/phpunit
+script:
+  - mkdir -p build/logs
+  - ./vendor/bin/phpunit
+
+after_script:
+  - php vendor/bin/coveralls
