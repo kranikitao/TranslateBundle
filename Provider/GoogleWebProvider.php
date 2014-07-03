@@ -47,7 +47,7 @@ class GoogleWebProvider implements ProviderInterface
     }
 
     /**
-     * @param $url
+     * @param string $url
      * @return array
      * @throws TranslateException
      */

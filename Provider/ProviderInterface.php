@@ -13,8 +13,8 @@ interface ProviderInterface
 {
     /**
      * @param $text
-     * @param $sourceLanguage
-     * @param $resultLanguage
+     * @param string $sourceLanguage
+     * @param string $resultLanguage
      * @return Translation
      */
     public function translate($text, $sourceLanguage, $resultLanguage);

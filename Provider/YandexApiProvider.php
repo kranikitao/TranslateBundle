@@ -78,8 +78,8 @@ class YandexApiProvider implements ProviderInterface
     }
 
     /**
-     * @param $url
-     * @return mixed
+     * @param string $url
+     * @return string
      * @throws \KNone\TranslateBundle\Exception\TranslateException
      */
     protected function execute($url)
