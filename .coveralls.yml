@@ -1,1 +1,2 @@
 src_dir: .
+exclude_no_stmt: true
