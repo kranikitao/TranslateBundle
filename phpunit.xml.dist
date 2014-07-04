@@ -18,6 +18,9 @@
     </testsuites>
 
     <filter>
+        <blacklist>
+            <file>*Interface.php</file>
+        </blacklist>
         <whitelist>
             <directory>./</directory>
             <exclude>
