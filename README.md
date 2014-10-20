@@ -67,7 +67,7 @@ Example:
 // Some action in controller
 public function someAction()
 {
-    /** @var KNone\TranslateBundle\Provider\ProviderInterface $tr */
+    /** @var KNone\TranslateBundle\Provider\ProviderInterface $translator */
     $translator = $this->get('k_none_translate.translator');
     $translation = $translator->translate('hello world', 'en', 'fr');
     // you can set 'auto' as source language and translator will detect it
