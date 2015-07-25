@@ -4,7 +4,7 @@ This bundle for Symfony2 applications, which translate some text in your applica
 
 [![Latest Stable Version](https://poser.pugx.org/knone/translate-bundle/v/stable.svg)](https://packagist.org/packages/knone/translate-bundle) [![Total Downloads](https://poser.pugx.org/knone/translate-bundle/downloads.svg)](https://packagist.org/packages/knone/translate-bundle) [![License](https://poser.pugx.org/knone/translate-bundle/license.svg)](https://packagist.org/packages/knone/translate-bundle)
 
-[![Build Status](https://travis-ci.org/KNone/TranslateBundle.svg)](https://travis-ci.org/KNone/TranslateBundle) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/KNone/TranslateBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/KNone/TranslateBundle/?branch=master)
+[![Build Status](https://travis-ci.org/KNonen/TranslateBundle.svg)](https://travis-ci.org/KNonen/TranslateBundle) [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/KNone/TranslateBundle/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/KNone/TranslateBundle/?branch=master)
 
 Installation
 -----------
